@@ -20,7 +20,7 @@ Building on his code, we tried to simplify the model and the code a bit
 further, removing things such as label smoothing or weight decay. Furthermore,
 we used a validation set to tune the hyperparameters.
 
-Our model get to about 93.6% accuracy on the CIFAR-10 validation set in 24 
+Our model get to about 93.5% accuracy on the CIFAR-10 validation set in 24 
 epochs.
 We provide code for the [model](simple_conv_net.py) as well as the 
 [training code](train_model.py).
