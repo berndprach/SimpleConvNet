@@ -10,7 +10,7 @@ There has been great work on creating simple models that can be trained quickly
 and reach good performance on CIFAR-10. David Page has written a blog post
 series how to train a model on CIFAR-10 in second. See for example
 [this colab](https://colab.research.google.com/github/davidcpage/cifar10-fast/blob/master/bag_of_tricks.ipynb).
-(The blog posts don't seem to be available anymore.)
+(The blog posts does not seem to be available anymore.)
 
 Based on this, Johan Wind has written a blog post
 ["94% on CIFAR-10 in 94 lines and 94 seconds"](https://johanwind.github.io/2022/12/28/cifar_94.html)
