@@ -9,6 +9,7 @@ from simple_conv_net import get_conv_net
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 LR = 0.1
+EPOCHS = 24
 
 
 def get_cifar_10():
@@ -52,10 +53,10 @@ def train_model():
 
     loss_function = CrossEntropyWithTemperature(temperature=8)
     optimizer = SGD(model.parameters(), lr=0., momentum=0.9, nesterov=True)
-    scheduler = lr_scheduler.OneCycleLR(optimizer, max_lr=LR, total_steps=24)
+    scheduler = lr_scheduler.OneCycleLR(optimizer, max_lr=LR, total_steps=EPOCHS)
     augment = get_augmentation()
 
-    for epoch_nr in range(24):
+    for epoch_nr in range(EPOCHS):
         epoch_losses = []
         epoch_accs = []
 
