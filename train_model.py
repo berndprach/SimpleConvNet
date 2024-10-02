@@ -45,19 +45,14 @@ class CrossEntropyWithTemperature:
         return self.std_xent(score_batch, label_batch) * self.temperature
 
 
-def get_optimizer(parameters, epochs=24):
-    sgd = SGD(parameters, lr=0., momentum=0.9, nesterov=True)
-    scheduler = lr_scheduler.OneCycleLR(sgd, max_lr=LR, total_steps=epochs)
-    return sgd, scheduler
-
-
 def train_model():
     train_dl, val_dl = get_cifar_10()
     model = get_conv_net()
     model.to(DEVICE)
 
     loss_function = CrossEntropyWithTemperature(temperature=8)
-    optimizer, scheduler = get_optimizer(model.parameters())
+    optimizer = SGD(model.parameters(), lr=0., momentum=0.9, nesterov=True)
+    scheduler = lr_scheduler.OneCycleLR(sgd, max_lr=LR, total_steps=24)
     augment = get_augmentation()
 
     for epoch_nr in range(24):
