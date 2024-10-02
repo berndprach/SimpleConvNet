@@ -52,7 +52,7 @@ def train_model():
 
     loss_function = CrossEntropyWithTemperature(temperature=8)
     optimizer = SGD(model.parameters(), lr=0., momentum=0.9, nesterov=True)
-    scheduler = lr_scheduler.OneCycleLR(sgd, max_lr=LR, total_steps=24)
+    scheduler = lr_scheduler.OneCycleLR(optimizer, max_lr=LR, total_steps=24)
     augment = get_augmentation()
 
     for epoch_nr in range(24):
